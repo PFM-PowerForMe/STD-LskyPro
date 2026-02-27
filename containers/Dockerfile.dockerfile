@@ -22,7 +22,8 @@ RUN sed -i "s/PRC/Asia\/Shanghai/g" config/app.php
 
 
 FROM ghcr.io/pfm-powerforme/s6-debian-php:8.1 AS runtime
-ENV LSKPRO_VERSION=2.1
+ENV LSKPRO_VERSION=2.1 \
+     CR_CADDY_WORK_DIR=/var/www/public
 
 # ROOTFS
 COPY rootfs/ /
